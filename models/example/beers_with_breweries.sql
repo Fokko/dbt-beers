@@ -7,4 +7,4 @@ SELECT
 FROM {{ ref('beers') }}
 JOIN {{ ref('breweries') }} USING (brewery_id)
  WHERE
-   trim(string_field_3) <> 'TX'
+   trim(brewery_state) <> 'TX'
