@@ -16,8 +16,11 @@ jobs:
         with:
           python-version: '3.8'
 
+      - name: run env
+        run: env
+
       - name: install deps
-        run: pip install dbt==0.17.2 datafold-sdk
+        run: pip install dbt datafold-sdk
 
       - name: run seed
         run: dbt seed --full-refresh --profiles-dir ./
