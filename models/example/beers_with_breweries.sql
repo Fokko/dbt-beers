@@ -2,6 +2,9 @@
     persist_docs={"relation": true, "columns": true}
 ) }}
 
-SELECT *
+SELECT
+    *
 FROM {{ ref('beers') }}
 JOIN {{ ref('breweries') }} USING (brewery_id)
+ WHERE
+   trim(brewery_state) <> 'TX'

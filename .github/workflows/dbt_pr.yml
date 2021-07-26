@@ -16,6 +16,9 @@ jobs:
         with:
           python-version: '3.8'
 
+      - name: run env
+        run: env
+
       - name: install deps
         run: pip install dbt datafold-sdk
 
@@ -40,3 +43,4 @@ jobs:
         env:
           DATAFOLD_APIKEY: ${{ secrets.DATAFOLD_APIKEY }}
           GIT_SHA: ${{ github.event.after }}
+
